@@ -1,0 +1,29 @@
+<h2 class="container">The Space Devs</h2>
+<div class="container">
+  <div class="right-container">
+    <div *ngFor="let launch of launches" class="launch-card">
+      <div class="launch-card-padding">
+        <div class="img-container">
+          <img
+             src="{{launch.image}}" 
+            alt=""
+            class="image" 
+          /> 
+        </div>
+        <h4 style="color: blue">
+           {{launch.name}} 
+        </h4>
+        <h4>
+           Statut:{{launch.status.name}}
+        </h4>
+        <h4>
+          Fenetre de lancement:{{launch.window_start}}
+          <!-- <span>{{launch.status}}</span> -->
+        </h4>
+        <button (click)="details()">détails</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer"><b>Développé par:</b>Mohamed Amine Kethiri</div>
+
