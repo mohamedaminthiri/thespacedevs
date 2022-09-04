@@ -7,7 +7,7 @@ import { LancementserviceService} from "../../services/lancementservice.service"
   styleUrls: ['./detail-lancement.component.css']
 })
 export class DetailLancementComponent implements OnInit {
- id:any;
+ id:any; 
  programs=[];
  program=[];
   constructor(private activateroute: ActivatedRoute,private lancementService: LancementserviceService) { }

@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './composants/home/home.component';
 import { DetailLancementComponent } from './composants/detail-lancement/detail-lancement.component';
 import { PageErreurComponent } from './composants/page-erreur/page-erreur.component';
-import { NgReduxModule, NgRedux } from '@angular-redux/store';
-import { InitialState, initialState } from './store/reducer';
+//import { NgReduxModule, NgRedux } from '@angular-redux/store';
+//import { InitialState, initialState } from './store/reducer';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { InitialState, initialState } from './store/reducer';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<InitialState>) {
-    ngRedux.configureStore(initialState);
-  }
+  // constructor(ngRedux: NgRedux<InitialState>) {
+  //   ngRedux.configureStore(initialState);
+  // }
 }

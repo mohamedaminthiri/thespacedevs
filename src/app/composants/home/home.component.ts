@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from "@angular/common";
 import { LancementserviceService} from "../../services/lancementservice.service";
 import { Router } from "@angular/router";
-import { NgRedux } from '@angular-redux/store';
+//import { NgRedux } from '@angular-redux/store';
 import { InitialState } from '../../store/reducer';
 export interface Launch {
   results:[]
