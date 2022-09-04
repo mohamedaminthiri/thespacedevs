@@ -4,10 +4,13 @@
     <div class="launch-card">
       <div class="launch-card-padding">
         <h4>
-           Date:
+          Agencies:
+          <ul *ngFor="let agencie of program.agencies">
+            <li>{{agencie.name}}</li>
+          </ul>
         </h4>
         <h4>
-          Fenetre de lancement:
+          platforme de lancement:{{program.description}}
         </h4>
       </div>
     </div>

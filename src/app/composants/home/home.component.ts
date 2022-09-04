@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from "@angular/common";
 import { LancementserviceService} from "../../services/lancementservice.service";
 import { Router } from "@angular/router";
-
+import { NgRedux } from '@angular-redux/store';
+import { InitialState } from '../../store/reducer';
+export interface Launch {
+  results:[]
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -26,7 +30,7 @@ export class HomeComponent implements OnInit {
     });
     //récupération des programmes
      this.lancementService.getAllprogrames().subscribe((data) => {
-       this.programs = data.result;    
+       this.programs = data.results;    
        console.log(this.programs);  
      });
   }
