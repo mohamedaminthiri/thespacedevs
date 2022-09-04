@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 })
 export class HomeComponent implements OnInit {
   launches= [];
-  launchers=[];
+  programs=[];
   arr=[];
   
   constructor(private router: Router,
@@ -24,14 +24,15 @@ export class HomeComponent implements OnInit {
       this.launches=this.launches.splice(0,50);
       console.log(this.launches);  
     });
+    //récupération des programmes
      this.lancementService.getAlllaunchers().subscribe((data) => {
-       this.launchers = data.program;    
-       console.log(this.launchers);  
+       this.programs = data.result;    
+       console.log(this.programs);  
      });
   }
   details(id:any){
     //verification si il un lancement existe ou non avec le ID de fusé dans le tableau de launcher
-    this.arr = this.launchers.filter((launcher:any)=>{
+    this.arr = this.programs.filter((launcher:any)=>{
       return (launcher.id ===id)
     });
     //s'il existe un lancement (ID existe dans launcher redirection vers détails si non la redirection sera vers une page d'erreur)

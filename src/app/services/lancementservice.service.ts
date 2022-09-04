@@ -14,9 +14,9 @@ export class LancementserviceService {
   getAllLaunches(): Observable<any> {
     return this.Http.get(this.Url+"launch");
   }
-  //recupération de tous les lanceuses
-  getAlllaunchers(): Observable<any> {
-    return this.Http.get(this.Url+"launcher");
+  //recupération de tous les programmes de lancement
+  getAllprogrames(): Observable<any> {
+    return this.Http.get(this.Url+"program");
   }
     //recupération de tous les agences
     getAllagencies(): Observable<any> {
