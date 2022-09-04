@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
       console.log(this.launches);  
     });
     //récupération des programmes
-     this.lancementService.getAlllaunchers().subscribe((data) => {
+     this.lancementService.getAllprogrames().subscribe((data) => {
        this.programs = data.result;    
        console.log(this.programs);  
      });

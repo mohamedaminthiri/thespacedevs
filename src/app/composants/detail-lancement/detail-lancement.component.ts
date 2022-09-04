@@ -23,5 +23,4 @@ export class DetailLancementComponent implements OnInit {
       }); 
     });
   }
-
 }
