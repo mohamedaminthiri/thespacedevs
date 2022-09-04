@@ -10,6 +10,9 @@ import { Router } from "@angular/router";
 })
 export class HomeComponent implements OnInit {
   launches= [];
+  launchers=[];
+  arr=[];
+  
   constructor(private router: Router,
     private lancementService: LancementserviceService) { }
 
@@ -21,11 +24,25 @@ export class HomeComponent implements OnInit {
       this.launches=this.launches.splice(0,50);
       console.log(this.launches);  
     });
-  }
-  details(id:any){
-     this.router.navigate(['/details',id]).then(() => {
-       window.location.reload();
+     this.lancementService.getAlllaunchers().subscribe((data) => {
+       this.launchers = data.program;    
+       console.log(this.launchers);  
      });
   }
-
+  details(id:any){
+    //verification si il un lancement existe ou non avec le ID de fusé dans le tableau de launcher
+    this.arr = this.launchers.filter((launcher:any)=>{
+      return (launcher.id ===id)
+    });
+    //s'il existe un lancement (ID existe dans launcher redirection vers détails si non la redirection sera vers une page d'erreur)
+    if(this.arr.length!=0){
+      this.router.navigate(['/details',id]).then(() => {
+        window.location.reload();
+      });
+    }else{
+      this.router.navigate(['/erreur']).then(() => {
+        window.location.reload();
+      });
+    } 
+  }
 }

@@ -8,15 +8,15 @@ import { LancementserviceService} from "../../services/lancementservice.service"
 })
 export class DetailLancementComponent implements OnInit {
  id:any;
- agencies=[];
+ launchers=[];
   constructor(private activateroute: ActivatedRoute,private lancementService: LancementserviceService) { }
 
   ngOnInit(): void {
     this.id = this.activateroute.snapshot.params.id;
     console.log(this.id)
-    this.lancementService.getAllagencies().subscribe((data) => {
-      this.agencies = data.results;    
-      console.log(this.agencies);  
+    this.lancementService.getAlllaunchers().subscribe((data) => {
+      this.launchers = data.results;    
+      console.log(this.launchers);  
     });
   }
 

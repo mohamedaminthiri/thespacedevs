@@ -10,11 +10,16 @@ export class LancementserviceService {
   Url = "https://ll.thespacedevs.com/2.2.0/";
 
   constructor(private Http: HttpClient) {}
-
+//recupérer tous les lancements
   getAllLaunches(): Observable<any> {
     return this.Http.get(this.Url+"launch");
   }
-  getAllagencies(): Observable<any> {
-    return this.Http.get(this.Url+"agencies");
+  //recupération de tous les lanceuses
+  getAlllaunchers(): Observable<any> {
+    return this.Http.get(this.Url+"launcher");
   }
+    //recupération de tous les agences
+    getAllagencies(): Observable<any> {
+      return this.Http.get(this.Url+"agencies");
+    }
 }
