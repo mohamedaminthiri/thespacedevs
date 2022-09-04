@@ -22,10 +22,10 @@ export class HomeComponent implements OnInit {
       console.log(this.launches);  
     });
   }
-  details(){
-    this.router.navigate(['/details']).then(() => {
-      window.location.reload();
-    });
+  details(id:any){
+     this.router.navigate(['/details',id]).then(() => {
+       window.location.reload();
+     });
   }
 
 }

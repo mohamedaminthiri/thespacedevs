@@ -7,11 +7,14 @@ import { Observable } from "rxjs";
 })
 export class LancementserviceService {
 
-  Url = "https://ll.thespacedevs.com/2.2.0/launch/";
+  Url = "https://ll.thespacedevs.com/2.2.0/";
 
   constructor(private Http: HttpClient) {}
 
   getAllLaunches(): Observable<any> {
-    return this.Http.get(this.Url);
+    return this.Http.get(this.Url+"launch");
+  }
+  getAllagencies(): Observable<any> {
+    return this.Http.get(this.Url+"agencies");
   }
 }
